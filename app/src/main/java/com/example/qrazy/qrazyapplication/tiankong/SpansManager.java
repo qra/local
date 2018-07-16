@@ -1,4 +1,4 @@
-package com.demo.tangminglong.fillblankdemo;
+package com.example.qrazy.qrazyapplication.tiankong;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.qrazy.qrazyapplication.R;
 
 import org.xml.sax.XMLReader;
 
@@ -67,7 +69,6 @@ public class SpansManager {
             public void handleTag(boolean opening, String tag, Editable output, XMLReader xmlReader) {
                 if (tag.equalsIgnoreCase(FILL_TAG_NAME) && opening) {
                     TextPaint paint = new TextPaint(mTv.getPaint());
-                    paint.setColor(mTv.getResources().getColor(R.color.ggfx_dark_blue));
                     ReplaceSpan span = new ReplaceSpan(mTv.getContext(), paint);
                     if (mActivity instanceof ReplaceSpan.OnClickListener)
                         span.mOnClick = (ReplaceSpan.OnClickListener) mActivity;
@@ -97,11 +98,6 @@ public class SpansManager {
         mCheckedSpan = mSpans.get(position);
         for (int i = 0 ; i < mSpans.size();i++) {
             ReplaceSpan replaceSpan = mSpans.get(i);
-            if (i == position) {
-                replaceSpan.setDrawTextColor(R.color.red);
-            }else {
-                replaceSpan.setDrawTextColor(R.color.ggfx_dark_blue);
-            }
             mTv.invalidate();
         }
     }
@@ -117,7 +113,7 @@ public class SpansManager {
     }
 
     //TextView触摸事件-->Span点击事件
-    private  LinkMovementMethod Method = new LinkMovementMethod() {
+    private LinkMovementMethod Method = new LinkMovementMethod() {
 
         public boolean onTouchEvent(TextView widget, Spannable buffer,
                                     MotionEvent event) {

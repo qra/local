@@ -1,4 +1,4 @@
-package com.tsongski.splitview;
+package com.example.qrazy.qrazyapplication.tiankong;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,6 +7,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+
+import com.example.qrazy.qrazyapplication.R;
 
 /**
  * Created by yaocong on 2015/7/30.

@@ -1,19 +1,16 @@
-package com.demo.tangminglong.fillblankdemo;
+package com.example.qrazy.qrazyapplication.tiankong;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.annotation.NonNull;
-import android.text.Layout;
 import android.text.Spannable;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import android.text.method.LinkMovementMethod;
 import android.text.style.ReplacementSpan;
-import android.view.MotionEvent;
 import android.widget.TextView;
 
-import com.demo.tangminglong.fillblankdemo.utils.DensityUtils;
+import com.example.qrazy.qrazyapplication.utils.DensityUtils;
 
 /**
  * Created by tangminglong on 17/10/19.
@@ -34,7 +31,7 @@ public class ReplaceSpan extends ReplacementSpan {
     public int id = 0;//回调中的对应Span的ID
 
 
-    public ReplaceSpan(Context context,Paint paint) {
+    public ReplaceSpan(Context context, Paint paint) {
         this.context = context;
         mPaint = paint;
         textWidth = DensityUtils.dp2px(context,textWidth);

@@ -1,4 +1,4 @@
-package com.xcgl.chengla.modules.comp.flowlayout;
+package com.example.qrazy.qrazyapplication.flowlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,9 +10,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 
-import com.xcgl.chengla.R;
+import com.example.qrazy.qrazyapplication.R;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -118,7 +119,7 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
             if (tagView.getLayoutParams() != null) {
                 tagViewContainer.setLayoutParams(tagView.getLayoutParams());
             } else {
-                MarginLayoutParams lp = new MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 lp.setMargins(dip2px(getContext(), 5),
                         dip2px(getContext(), 5),
                         dip2px(getContext(), 5),

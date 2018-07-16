@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.util.Log;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -38,14 +37,14 @@ public class ApplicationInfoUtil {
 
     /**
      * 获取手机所有应用信息
-     *
-     * @param allApplist
+     *  @param allApplist
      * @param context
      */
-    public static void getAllProgramInfo(List<AppInfo> allApplist,
-                                         Context context) {
+    public static ArrayList<AppInfo> getAllProgramInfo(List<AppInfo> allApplist,
+                                                       Context context) {
 
-        getAllProgramInfo(allApplist, context, DEFAULT);
+        ArrayList<AppInfo> appList = getAllProgramInfo(allApplist, context, DEFAULT);
+        return appList;
     }
 
     /**
@@ -56,7 +55,7 @@ public class ApplicationInfoUtil {
      * @param type
      *            标识符 是否区分系统和非系统应用
      */
-    public static void getAllProgramInfo(List<AppInfo> applist,
+    public static ArrayList<AppInfo> getAllProgramInfo(List<AppInfo> applist,
                                          Context context, int type) {
         ArrayList<AppInfo> appList = new ArrayList<>(); // 用来存储获取的应用信息数据
         List<PackageInfo> packages = context.getPackageManager()
@@ -92,6 +91,7 @@ public class ApplicationInfoUtil {
             }
 
         }
+        return (ArrayList<AppInfo>) applist;
     }
 
     /**

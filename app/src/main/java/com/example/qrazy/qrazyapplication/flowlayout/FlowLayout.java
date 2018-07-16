@@ -1,4 +1,4 @@
-package com.xcgl.chengla.modules.comp.flowlayout;
+package com.example.qrazy.qrazyapplication.flowlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.xcgl.chengla.R;
+import com.example.qrazy.qrazyapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;

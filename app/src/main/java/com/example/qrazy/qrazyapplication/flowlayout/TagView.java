@@ -1,4 +1,4 @@
-package com.xcgl.chengla.modules.comp.flowlayout;
+package com.example.qrazy.qrazyapplication.flowlayout;
 
 import android.content.Context;
 import android.view.View;

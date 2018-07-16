@@ -1,20 +1,14 @@
-package wapchief.com.collectiondemo.framework;
+package com.example.qrazy.qrazyapplication;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-
-import org.greenrobot.greendao.AbstractDao;
-
-import wapchief.com.collectiondemo.greendao.DaoMaster;
-import wapchief.com.collectiondemo.greendao.DaoSession;
-import wapchief.com.collectiondemo.greendao.model.Message;
 
 /**
  * Created by apple on 2017/7/4.
  * 封装Greendao数据库
  */
 
-public class GreenDaoHelper{
+public class GreenDaoHelper {
 
     Context context;
     DaoMaster.DevOpenHelper helper;

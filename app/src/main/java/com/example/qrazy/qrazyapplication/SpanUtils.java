@@ -1,6 +1,7 @@
-package com.xcgl.chengla.utils;
+package com.example.qrazy.qrazyapplication;
 
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BlurMaskFilter;
@@ -1138,7 +1139,7 @@ public final class SpanUtils {
 
         private CustomImageSpan(final Bitmap b, final int verticalAlignment) {
             super(verticalAlignment);
-            mDrawable = new BitmapDrawable(BaseUtils.getApp().getResources(), b);
+            mDrawable = new BitmapDrawable(MyApplication.getContext().getResources(), b);
             mDrawable.setBounds(
                     0, 0, mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight()
             );
@@ -1171,9 +1172,9 @@ public final class SpanUtils {
                 Bitmap bitmap;
                 try {
                     InputStream is =
-                            BaseUtils.getApp().getContentResolver().openInputStream(mContentUri);
+                            MyApplication.getContext().getContentResolver().openInputStream(mContentUri);
                     bitmap = BitmapFactory.decodeStream(is);
-                    drawable = new BitmapDrawable(BaseUtils.getApp().getResources(), bitmap);
+                    drawable = new BitmapDrawable(MyApplication.getContext().getResources(), bitmap);
                     drawable.setBounds(
                             0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()
                     );
@@ -1181,16 +1182,14 @@ public final class SpanUtils {
                         is.close();
                     }
                 } catch (Exception e) {
-                    LogUtil.e("sms", "Failed to loaded content " + mContentUri);
                 }
             } else {
                 try {
-                    drawable = ContextCompat.getDrawable(BaseUtils.getApp(), mResourceId);
+                    drawable = ContextCompat.getDrawable(MyApplication.getContext(), mResourceId);
                     drawable.setBounds(
                             0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()
                     );
                 } catch (Exception e) {
-                    LogUtil.e("sms", "Unable to find resource: " + mResourceId);
                 }
             }
             return drawable;
