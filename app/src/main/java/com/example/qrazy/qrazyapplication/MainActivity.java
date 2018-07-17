@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             items.add(app);
         }
         adapter.setItems(items);
-        adapter.notifyDataSetChanged();
+       // adapter.notifyDataSetChanged();
 
         /*mSpansManager = new SpansManager(this,mTvContent,mEtInput);
         mSpansManager.doFillBlank(mTestStr);*/
